@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" data-framework="javascript">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <title>Sign Up Page</title>
+
+    <!-- Material Design Fonts -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Material Design -->
+    <link href="node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.css" rel="stylesheet">
+    <link href="node_modules/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
+    <!-- Page style -->
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/project.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
+
+<body>
+    <main class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-lg-push-4 col-sm-6 col-sm-push-3">
+                    <section class="content-inner">
+                        <div class="card-wrap">
+                            <div class="card">
+                                <div class="card-main">
+                                    <div class="card-header">
+                                        <div class="card-inner">
+                                            <h1 class="card-heading">Sign Up Form</h1>
+                                        </div>
+                                    </div>
+                                    <div class="card-inner">
+                                        <p class="text-center">
+                                            <span class="avatar avatar-inline avatar-lg">
+                                              <img alt="User" src="../images/users/avatar-001.jpg">
+                                            </span>
+                                        </p>
+                                        <form name="signup" class="form" action="#">
+                                            <!-- username -->
+                                            <div class="form-group form-group-label">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <label class="floating-label" for="username">Username (email)</label>
+                                                        <input class="form-control" id="username" type="text">
+                                                        <span class="help-block">Required. Must be an email.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- password -->
+                                            <div class="form-group form-group-label">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <label class="floating-label" for="password">Password</label>
+                                                        <input class="form-control" id="password" type="password">
+                                                        <span class="help-block">Required. Must be at least 6 characters.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- confirm_password -->
+                                            <div class="form-group form-group-label">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <label class="floating-label" for="confirm_password">Confirm Password</label>
+                                                        <input class="form-control" id="confirm_password" type="password">
+                                                        <span class="help-block">Required. Must be at least 6 characters.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- first_name -->
+                                            <div class="form-group form-group-label">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <label class="floating-label" for="firstname">First Name</label>
+                                                        <input class="form-control" id="firstname" type="text">
+                                                        <span class="help-block">Required. Must be only letters and less than 50 characters.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- last_name -->
+                                            <div class="form-group form-group-label">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <label class="floating-label" for="lastname">Last Name</label>
+                                                        <input class="form-control" id="lastname" type="text">
+                                                        <span class="help-block">Must be only letters and less than 50 characters.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- birthday -->
+                                            <!-- <div class="form-group form-group-label">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <label class="floating-label" for="birthday">Birthday</label>
+                                                        <input class="form-control" id="birthday" type="text">
+                                                        <span class="help-block">Required. Age must be from 14 to 150.</span>
+                                                    </div>
+                                                </div>
+                                            </div> -->
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-10 col-md-push-1">
+                                                        <button id="btn_submit" class="btn btn-block btn-brand waves-attach waves-light">Sign Up</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="alertModal" tabindex="-1" role="alert" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-alert">
+        <div class="modal-content alert alert-info">
+          <div id="alert-body" class="modal-body"></div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-alert -->
+    </div><!-- /.modal -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <!-- Material Design for Bootstrap -->
+    <script src="node_modules/bootstrap-material-design/dist/js/material.js"></script>
+    <script src="node_modules/bootstrap-material-design/dist/js/ripples.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/utilities.js"></script>
+    <script src="js/project.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.material.init();
+        });
+    </script>
+</body>
+
+</html>
