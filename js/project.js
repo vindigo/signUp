@@ -76,7 +76,8 @@ lastname.addEventListener("blur", function () {
 btn_submit.addEventListener("click", function (event) {
 	// submit form for validation
 	event.preventDefault();
-	alert("submitted");
+	submit_form();
+	console.log('form submitted');
 });
 
 // FUNCTIONS ---------------------------- //
@@ -108,10 +109,7 @@ function valid_username (givenStr) {
 		msg += "Username must be an email.\n";
 	}
 
-	if ( msg !== "") {
-		open_modal(msg);
-		console.log(msg);
-	}
+	if ( msg !== "") { open_modal(msg); }
 }
 
 /**
@@ -136,10 +134,7 @@ function valid_password (givenStr) {
 		msg += "Password must be at least " + min + " characters.\n";
 	}
 
-	if ( msg !== "") {
-		open_modal(msg);
-		console.log(msg);
-	}
+	if ( msg !== "") { open_modal(msg); }
 }
 
 /**
@@ -169,10 +164,7 @@ function valid_confirm_password (givenStr, passwordStr) {
 		msg += "Password and Confirm Password must match.\n";
 	}
 
-	if ( msg !== "") {
-		open_modal(msg);
-		console.log(msg);
-	}
+	if ( msg !== "") { open_modal(msg); }
 }
 
 /**
@@ -202,10 +194,7 @@ function valid_firstname (givenStr) {
 		msg += "Firstname must contain only letters.\n";
 	}
 
-	if ( msg !== "") {
-		open_modal(msg);
-		console.log(msg);
-	}
+	if ( msg !== "") { open_modal(msg); }
 }
 
 /**
@@ -231,10 +220,7 @@ function valid_lastname (givenStr) {
 			msg += "Lastname must contain only letters.\n";
 		}
 
-		if ( msg !== "") {
-			open_modal(msg);
-			console.log(msg);
-		}
+		if ( msg !== "") { open_modal(msg); }
 	}
 }
 
@@ -257,4 +243,38 @@ function valid_birthday (givenStr) {
 function open_modal (msg) {
 	$('#alert-body').text(msg);
 	$('#alertModal').modal('show');
+}
+
+/**
+ * Clears form
+ */
+function clear_form () {
+	console.log('clear_form called');
+	var fields = document.querySelectorAll('.form-control');
+	for (var i in fields) {
+		fields[i].value = "";
+	}
+}
+
+/**
+ * Checks to see if all required fields are filled and submits form
+ */
+function submit_form () {
+	console.log('submit_form called');
+	var msg = '';
+	var isNull = username.value !== '' &&
+		password.value !== '' &&
+		confirm_password.value !== '' &&
+		firstname.value !=='';
+
+	if (isNull) {
+		console.log('form is complete');
+		msg += 'Form has been submitted.';
+		clear_form();
+	} else {
+		console.log('form is not complete');
+		msg += 'Required fields are not complete. Please try again.';
+	}
+
+	open_modal(msg);
 }
