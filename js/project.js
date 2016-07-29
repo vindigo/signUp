@@ -87,7 +87,6 @@ btn_submit.addEventListener("click", function (event) {
  * @param {string} givenStr - A given string
  */
 function valid_username (givenStr) {
-	console.log("username was called ===============================");
 	var username = givenStr.value;
 	var max = config.username.max_length;
 	var isEmail = Utilities.isEmail(username);
@@ -117,7 +116,6 @@ function valid_username (givenStr) {
  * @param {string} givenStr - A given string
  */
 function valid_password (givenStr) {
-	console.log("Password was called ===============================");
 	var password = givenStr.value;
 	var min = config.password.min_length;
 	var isRequired = config.password.required;
