@@ -74,10 +74,8 @@ lastname.addEventListener("blur", function () {
 // });
 
 btn_submit.addEventListener("click", function (event) {
-	// submit form for validation
 	event.preventDefault();
 	submit_form();
-	console.log('form submitted');
 });
 
 // FUNCTIONS ---------------------------- //
@@ -144,7 +142,6 @@ function valid_password (givenStr) {
  * @param {string} givenStr - A given string
  */
 function valid_confirm_password (givenStr, passwordStr) {
-	console.log("Confirm_password was called ===============================");
 	var confirm_password = givenStr.value;
 	var password = passwordStr.value;
 	var min = config.confirm_password.min_length;
@@ -174,7 +171,6 @@ function valid_confirm_password (givenStr, passwordStr) {
  * @param {string} givenStr - A given string
  */
 function valid_firstname (givenStr) {
-	console.log("Firstname was called ===============================");
 	var firstname = givenStr.value;
 	var max = config.firstname.max_length;
   var isRequired = config.firstname.required;
@@ -204,7 +200,6 @@ function valid_firstname (givenStr) {
  * @param {string} givenStr - A given string
  */
 function valid_lastname (givenStr) {
-	console.log("Lastname was called ===============================");
 	var lastname = givenStr.value;
 	var max = config.lastname.max_length;
 	var isText = Utilities.isText;
@@ -231,7 +226,6 @@ function valid_lastname (givenStr) {
  * @param {string} givenStr - A given string
  */
 function valid_birthday (givenStr) {
-	console.log("Birthday was called ===============================");
 	// TODO: write validation for birthday field
 }
 
@@ -249,7 +243,6 @@ function open_modal (msg) {
  * Clears form
  */
 function clear_form () {
-	console.log('clear_form called');
 	var fields = document.querySelectorAll('.form-control');
 	for (var i in fields) {
 		fields[i].value = "";
@@ -260,7 +253,6 @@ function clear_form () {
  * Checks to see if all required fields are filled and submits form
  */
 function submit_form () {
-	console.log('submit_form called');
 	var msg = '';
 	var isNull = username.value !== '' &&
 		password.value !== '' &&
@@ -268,11 +260,9 @@ function submit_form () {
 		firstname.value !=='';
 
 	if (isNull) {
-		console.log('form is complete');
 		msg += 'Form has been submitted.';
 		clear_form();
 	} else {
-		console.log('form is not complete');
 		msg += 'Required fields are not complete. Please try again.';
 	}
 
